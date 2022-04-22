@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Input from "./Form/Input";
+import Select from './Form/Select';
+
 
 function App() {
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <form>
+      <Select options={['smartphone', 'tablet']} />
+      <Input id='nome' label="nome" value={nome} setValue={setNome}/>
+      <Input id='email' label="email" value={email} setValue={setEmail}/> 
+      <button>Enviar</button>
+    </form>
   );
 }
 
